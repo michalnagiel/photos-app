@@ -1,0 +1,53 @@
+.card {
+  width: 30rem;
+  display: inline-block;
+  margin: 1rem;
+  text-align: left;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.username-date {
+  display: flex;
+}
+
+.username {
+  font-weight: bold;
+  margin: 0.5rem;
+}
+
+.date {
+  font-weight: lighter;
+  margin: 0.5rem;
+}
+
+.like {
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.25rem;
+  margin: 0 0.5rem;
+}
+
+.author-img {
+  width: 3rem;
+  border-radius: 50%;
+  flex-grow: 0;
+}
+
+.title-likes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-body {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.card-img-top {
+  border-radius: 0;
+}
