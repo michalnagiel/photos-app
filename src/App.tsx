@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
-import "./App.css";
+import "./App.scss";
 import Header from "./components/Header/Header";
 import Photos from "./components/Photos/Photos";
 
