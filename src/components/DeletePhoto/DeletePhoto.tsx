@@ -1,12 +1,17 @@
 import { deletePhoto } from "../../apiService";
 
-const DeletePhoto = (props: { photoId: number; onDeletePhoto: Function }) => {
-  const handleDeletePhoto = async () => {
+interface DeletePhotoProps {
+  photoId: number;
+  onDeletePhoto: (photoId: number) => void;
+}
+
+const DeletePhoto = (props: DeletePhotoProps) => {
+  const handleDeletePhoto = async (): Promise<void> => {
     try {
-      deletePhoto(props.photoId);
+      await deletePhoto(props.photoId);
       props.onDeletePhoto(props.photoId);
     } catch (error) {
-      console.error("Add comment error", error);
+      console.error("Delete photo error", error);
       alert(error);
     }
   };

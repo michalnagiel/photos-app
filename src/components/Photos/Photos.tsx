@@ -6,25 +6,25 @@ import LoginForm from "../LoginForm/LoginForm";
 
 import "./Photos.scss";
 
-export default function Photos() {
-  interface Comment {
-    commentId: number;
-    content: string;
-    username: string;
-    profilePhotoUri: string;
-  }
+interface Comment {
+  commentId: number;
+  content: string;
+  username: string;
+  profilePhotoUri: string;
+}
 
-  interface Photo {
-    photoId: number;
-    uri: string;
-    title: string;
-    description: string;
-    createdDate: string;
-    userId: number;
-    likes: string[];
-    comments: Comment[];
-  }
+interface Photo {
+  photoId: number;
+  uri: string;
+  title: string;
+  description: string;
+  createdDate: string;
+  userId: number;
+  likes: string[];
+  comments: Comment[];
+}
 
+export default function Photos(): JSX.Element {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [loadingPhotos, setLoadingPhotos] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -59,7 +59,7 @@ export default function Photos() {
   };
 
   const handleRefresh = () => {
-    setPhotos(photos.filter((photo) => photo));
+    setPhotos([...photos]);
   };
 
   if (loadingPhotos) return <div>Loading Photos...</div>;

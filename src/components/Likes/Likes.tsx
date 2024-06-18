@@ -9,17 +9,17 @@ const Likes = (props: any) => {
   );
   const [numberOfLikes, setNumberOfLikes] = useState(props.likes.length);
 
-  function likeClicked() {
+  const likeClicked = async () => {
     if (like === "🤍") {
       setLike("❤️");
-      likePhoto(props.photoId);
+      await likePhoto(props.photoId);
       setNumberOfLikes(numberOfLikes + 1);
     } else {
       setLike("🤍");
-      unlikePhoto(props.photoId);
+      await unlikePhoto(props.photoId);
       setNumberOfLikes(numberOfLikes - 1);
     }
-  }
+  };
   return (
     <div className="title-like">
       <p className="like" onClick={likeClicked}>

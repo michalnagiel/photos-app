@@ -7,16 +7,16 @@ interface CommentData {
   content: string;
   username: string;
   profilePhotoUri: string;
-  onDeleteComment: Function;
+  onDeleteComment: (commentId: number) => void;
 }
 
 export default function Comment(props: CommentData) {
-  const handleDeleteComment = async () => {
+  const handleDeleteComment = async (): Promise<void> => {
     try {
-      deleteComment(props.commentId);
+      await deleteComment(props.commentId);
       props.onDeleteComment(props.commentId);
     } catch (error) {
-      console.error("Add comment error", error);
+      console.error("Delete comment error", error);
       alert(error);
     }
   };
